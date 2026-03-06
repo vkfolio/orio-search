@@ -254,8 +254,8 @@ Content-Type: application/json
 {
   "urls": [
     "https://httpbin.org/html",
-    "https://example.com",
-    "https://www.iana.org/about"
+    "https://httpbin.org/html",
+    "https://jsonplaceholder.typicode.com"
   ],
   "format": "markdown"
 }
@@ -279,7 +279,7 @@ Content-Type: application/json
 
 {
   "urls": [
-    "https://example.com",
+    "https://httpbin.org/html",
     "https://thisdomaindoesnotexist99999.com/page"
   ]
 }
@@ -336,7 +336,7 @@ Content-Type: application/json
 Authorization: Bearer {{apiKey}}
 
 {
-  "urls": ["https://example.com"]
+  "urls": ["https://httpbin.org/html"]
 }
 
 ###
@@ -437,13 +437,13 @@ Content-Type: application/json
 
 {
   "urls": [
-    "https://example.com/1", "https://example.com/2", "https://example.com/3",
-    "https://example.com/4", "https://example.com/5", "https://example.com/6",
-    "https://example.com/7", "https://example.com/8", "https://example.com/9",
-    "https://example.com/10", "https://example.com/11", "https://example.com/12",
-    "https://example.com/13", "https://example.com/14", "https://example.com/15",
-    "https://example.com/16", "https://example.com/17", "https://example.com/18",
-    "https://example.com/19", "https://example.com/20", "https://example.com/21"
+    "https://httpbin.org/html/1", "https://httpbin.org/html/2", "https://httpbin.org/html/3",
+    "https://httpbin.org/html/4", "https://httpbin.org/html/5", "https://httpbin.org/html/6",
+    "https://httpbin.org/html/7", "https://httpbin.org/html/8", "https://httpbin.org/html/9",
+    "https://httpbin.org/html/10", "https://httpbin.org/html/11", "https://httpbin.org/html/12",
+    "https://httpbin.org/html/13", "https://httpbin.org/html/14", "https://httpbin.org/html/15",
+    "https://httpbin.org/html/16", "https://httpbin.org/html/17", "https://httpbin.org/html/18",
+    "https://httpbin.org/html/19", "https://httpbin.org/html/20", "https://httpbin.org/html/21"
   ]
 }
 
@@ -454,7 +454,7 @@ POST {{baseUrl}}/extract
 Content-Type: application/json
 
 {
-  "urls": ["https://example.com"],
+  "urls": ["https://httpbin.org/html"],
   "format": "html"
 }
 

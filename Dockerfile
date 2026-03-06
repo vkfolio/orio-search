@@ -2,9 +2,10 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# System dependencies for readability-lxml
+# System dependencies for readability-lxml + CA certificates for SSL
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libxml2-dev libxslt-dev gcc \
+    libxml2-dev libxslt-dev gcc ca-certificates \
+    && update-ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
