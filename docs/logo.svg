@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fb923c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="240" height="240" rx="48" fill="#09090b"/>
+  <!-- Orbital ring (outer) -->
+  <ellipse cx="108" cy="108" rx="62" ry="62" fill="none" stroke="url(#glow)" stroke-width="4" opacity="0.25" transform="rotate(-30 108 108)"/>
+  <!-- Magnifying glass circle -->
+  <circle cx="108" cy="108" r="42" fill="none" stroke="url(#glow)" stroke-width="7"/>
+  <!-- Inner ring detail -->
+  <circle cx="108" cy="108" r="24" fill="none" stroke="#f97316" stroke-width="2.5" opacity="0.3"/>
+  <!-- Magnifying glass handle -->
+  <line x1="140" y1="140" x2="178" y2="178" stroke="url(#glow)" stroke-width="7" stroke-linecap="round"/>
+  <!-- Center dot -->
+  <circle cx="108" cy="108" r="6" fill="#f97316" opacity="0.5"/>
+  <!-- Orbital accent dots -->
+  <circle cx="60" cy="72" r="4" fill="#f97316" opacity="0.6"/>
+  <circle cx="156" cy="144" r="3" fill="#fb923c" opacity="0.4"/>
+</svg>

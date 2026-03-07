@@ -114,8 +114,9 @@ body::before {
 }
 
 .logo-icon {
-  color: var(--accent);
-  font-size: 1.5rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
 }
 
 .nav-links {
@@ -774,16 +775,70 @@ section h2 {
   text-align: center;
 }
 
-.arch-diagram {
+.arch-native {
   margin-top: 48px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.arch-tier {
+  display: flex;
+  gap: 20px;
   justify-content: center;
 }
-
-.arch-diagram img {
-  object-fit: contain;
+.arch-tier-triple { gap: 16px; }
+.arch-tier-double { gap: 24px; }
+.arch-node {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 32px;
+  min-width: 170px;
   text-align: center;
-  max-height: 700px;
+}
+.arch-node-main {
+  border-color: var(--accent);
+  background: rgba(249,115,22,0.05);
+  box-shadow: 0 0 24px rgba(249,115,22,0.08);
+}
+.arch-node-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.arch-node-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.arch-arrow-down {
+  color: var(--accent);
+  font-size: 1.5rem;
+  padding: 10px 0;
+}
+.arch-arrows-triple {
+  display: flex;
+  gap: 120px;
+  color: var(--accent);
+  font-size: 1.5rem;
+  padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .arch-tier-triple,
+  .arch-tier-double {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .arch-arrows-triple {
+    gap: 40px;
+  }
+  .arch-node {
+    padding: 16px 24px;
+    min-width: 140px;
+  }
 }
 
 .arch-ascii {

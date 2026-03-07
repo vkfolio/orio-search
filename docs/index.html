@@ -11,7 +11,16 @@
   <meta property="og:description"
     content="Open-source, self-hosted web search API. Tavily-compatible. Deploy in 30 seconds.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.oriosearch.org">
+  <meta property="og:image" content="https://www.oriosearch.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OrioSearch — Stop Renting Your Search">
+  <meta name="twitter:description" content="Open-source, self-hosted web search API. Tavily-compatible. Deploy in 30 seconds.">
+  <meta name="twitter:image" content="https://www.oriosearch.org/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -26,7 +35,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="#" class="logo">
-        <span class="logo-icon">&#9678;</span> OrioSearch
+        <img src="logo.svg" alt="OrioSearch" class="logo-icon"> OrioSearch
       </a>
       <div class="nav-links">
         <a href="#features">Features</a>
@@ -336,8 +345,48 @@ docker compose up --build</code></pre>
   <section class="architecture" id="architecture">
     <div class="section-inner">
       <h2>How the pieces fit together.</h2>
-      <div class="arch-diagram">
-        <img src="./arch.png" />
+      <div class="arch-native">
+        <div class="arch-tier">
+          <div class="arch-node">
+            <div class="arch-node-title">Your App / AI Agent</div>
+            <div class="arch-node-desc">Any HTTP client</div>
+          </div>
+        </div>
+        <div class="arch-arrow-down">&darr;</div>
+        <div class="arch-tier">
+          <div class="arch-node arch-node-main">
+            <div class="arch-node-title">OrioSearch API</div>
+            <div class="arch-node-desc">FastAPI + Gunicorn (4 workers)</div>
+          </div>
+        </div>
+        <div class="arch-arrows-triple">
+          <span>&darr;</span><span>&darr;</span><span>&darr;</span>
+        </div>
+        <div class="arch-tier arch-tier-triple">
+          <div class="arch-node">
+            <div class="arch-node-title">SearXNG</div>
+            <div class="arch-node-desc">70+ search engines</div>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-title">Extractor</div>
+            <div class="arch-node-desc">trafilatura + readability</div>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-title">LLM</div>
+            <div class="arch-node-desc">Ollama / OpenAI / Groq</div>
+          </div>
+        </div>
+        <div class="arch-arrow-down">&darr;</div>
+        <div class="arch-tier arch-tier-double">
+          <div class="arch-node">
+            <div class="arch-node-title">DuckDuckGo</div>
+            <div class="arch-node-desc">Auto-fallback</div>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-title">Redis Cache</div>
+            <div class="arch-node-desc">Search + Extract + Answers</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -532,7 +581,7 @@ docker compose up --build</code></pre>
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="logo-icon">&#9678;</span> OrioSearch
+        <img src="logo.svg" alt="OrioSearch" class="logo-icon"> OrioSearch
       </div>
       <p>Open-source web search API. Built with FastAPI, SearXNG, and Redis.</p>
       <div class="footer-links">
