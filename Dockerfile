@@ -18,15 +18,9 @@ RUN python -c "from flashrank import Ranker; Ranker(model_name='ms-marco-MiniLM-
 # Copy application
 COPY app/ ./app/
 COPY config.yaml .
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 EXPOSE 8000
 
-# Production: gunicorn with uvicorn workers (uvloop + httptools auto-enabled)
-CMD ["gunicorn", "app.main:app", \
-     "--worker-class", "uvicorn.workers.UvicornWorker", \
-     "--workers", "4", \
-     "--bind", "0.0.0.0:8000", \
-     "--timeout", "60", \
-     "--graceful-timeout", "30", \
-     "--keep-alive", "5", \
-     "--access-logfile", "-"]
+ENTRYPOINT ["/entrypoint.sh"]

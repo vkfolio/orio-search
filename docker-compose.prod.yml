@@ -4,8 +4,11 @@ services:
     container_name: orio-search-searxng
     ports:
       - "8080:8080"
-    volumes:
-      - ./searxng/settings.yml:/etc/searxng/settings.yml:ro
+    environment:
+      - SEARXNG_SECRET_KEY=orio-search-secret-change-me
+      - SEARXNG_SERVER__LIMITER=false
+      - SEARXNG_GENERAL__ENABLE_METRICS=false
+      - SEARXNG_SEARCH__FORMATS=[html, json]
     restart: unless-stopped
     healthcheck:
       test:
@@ -56,14 +59,12 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./config.yaml:/app/config.yaml:ro
+      - ./data:/data
     depends_on:
       searxng:
         condition: service_healthy
       redis:
         condition: service_healthy
-    environment:
-      - ORIO_SEARCH_CONFIG=/app/config.yaml
     restart: unless-stopped
     deploy:
       resources:
