@@ -1,8 +1,6 @@
 # OrioSearch
 
 <p align="center">
-  <a href="https://www.oriosearch.org">Website</a> •
-  <a href="https://www.producthunt.com/products/oriosearch">Product Hunt</a> •
   <a href="https://github.com/vkfolio/orio-search/issues">Issues</a> •
   <a href="#license">License</a>
 </p>
@@ -13,7 +11,7 @@ Self-hosted, Tavily-compatible web search and content extraction API. Drop-in re
 
 Built on **SearXNG** (meta-search) + **FastAPI** with async concurrency, Redis caching, circuit breakers, result reranking, SSE streaming, and multi-tier content extraction.
 
-🌐 **[www.oriosearch.org](https://www.oriosearch.org)** — Open source · MIT License · Free forever
+Open source · MIT License · Free forever
 
 ---
 
