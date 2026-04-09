@@ -7,9 +7,7 @@
   <a href="#license">License</a>
 </p>
 
-<p align="center">
-  <a href="https://www.producthunt.com/products/oriosearch?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-oriosearch" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1092028&theme=dark&t=1772893667823" alt="OrioSearch on Product Hunt" width="250" height="54" /></a>
-</p>
+
 
 Self-hosted, Tavily-compatible web search and content extraction API. Drop-in replacement for Tavily with full control over your search infrastructure.
 
