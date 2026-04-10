@@ -1,0 +1,75 @@
+services:
+  searxng:
+    image: searxng/searxng:latest
+    container_name: orio-search-searxng
+    ports:
+      - "8080:8080"
+    environment:
+      - SEARXNG_SECRET_KEY=orio-search-secret-change-me
+      - SEARXNG_SERVER__LIMITER=false
+      - SEARXNG_GENERAL__ENABLE_METRICS=false
+      - SEARXNG_SEARCH__FORMATS=[html, json]
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:8080/healthz",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  redis:
+    image: redis:7-alpine
+    container_name: orio-search-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: orio-search-ollama
+    profiles: ["llm"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+
+  api:
+    image: ghcr.io/vkfolio/orio-search:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
+    depends_on:
+      searxng:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+
+volumes:
+  ollama_data:
