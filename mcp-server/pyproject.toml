@@ -1,0 +1,10 @@
+[project]
+name = "orio-search-mcp"
+version = "1.0.0"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.27.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+]

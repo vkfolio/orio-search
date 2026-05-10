@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "oriosearch": {
+      "command": "python",
+      "args": ["C:\\path\\to\\orio-search-mcp\\src\\index.py"],
+      "env": {
+        "ORIOSEARCH_BASE_URL": "http://localhost:8000"
+      }
+    }
+  }
+}
