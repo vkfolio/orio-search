@@ -15,6 +15,7 @@ flashrank==0.2.9
 readability-lxml==0.8.1
 circuitbreaker==2.0.0
 openai>=1.12.0
+brotlicffi>=1.2.0.1
 
 # Dev / Testing
 pytest==8.3.4
