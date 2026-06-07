@@ -20,7 +20,7 @@ Open source · MIT License · Free forever
 - **Tavily-compatible API** — `/search`, `/extract`, and `/tool-schema` endpoints match Tavily's interface
 - **AI answer generation** — `include_answer: true` generates LLM-synthesized answers from search results (OpenAI, Ollama, Groq, or any OpenAI-compatible API)
 - **Image search** — `include_images: true` returns image results alongside web results via parallel search (no extra latency)
-- **LLM-ready** — `/tool-schema` returns OpenAI function-calling definitions for `web_search` and `web_extract`
+- **LLM-ready** — `/tool-schema` returns OpenAI function-calling definitions for `web_search` and `web_extract` (for MCP Server, [see here](https://github.com/rivalarya/orio-search/tree/master/mcp-server))
 - **SearXNG backend** — aggregates 70+ search engines with automatic fallback to DuckDuckGo
 - **Content extraction** — multi-tier pipeline: trafilatura (F1: 0.958) with readability-lxml fallback
 - **Redis caching** — pipeline-batched lookups, configurable TTLs, stale-cache graceful degradation
